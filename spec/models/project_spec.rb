@@ -10,7 +10,7 @@ context "create project" do
   end
 context "Assotiations"do
   it {is_expected.to belong_to(:user) }
-  it {is_expected.to have_many(:task) }
+  it {is_expected.to have_many(:tasks) }
   it {is_expected.to belong_to(:status) }
   end
 end

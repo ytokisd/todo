@@ -8,6 +8,6 @@ context "create user" do
 	end
   end
 context "Assotiations"do
-  it {is_expected.to have_many(:project) }
+  it {is_expected.to have_many(:projects) }
   end
 end

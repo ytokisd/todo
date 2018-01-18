@@ -1,4 +1,4 @@
 class Status < ActiveRecord::Base
-  has_many :project
-  has_many :task
+  has_many :projects
+  has_many :tasks
 end

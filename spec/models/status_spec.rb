@@ -8,7 +8,7 @@ context "create status" do
 	end
   end
 context "Assotiations"do
-  it {is_expected.to have_many(:task) }
-  it {is_expected.to have_many(:project) }
+  it {is_expected.to have_many(:tasks) }
+  it {is_expected.to have_many(:projects) }
   end
 end
