@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Tasks</th>
+  </tr>
+  
+  <%- @tasks.each do |task| %>
+    <tr> 
+      <td>
+        <%=task.name%>
+        <%= link_to 'Edit', edit_project_task_path(@project, task) %>
+        <%= link_to 'Delete', project_task_path(@project, task),
+                                 method: :delete, 
+                                 data: { confirm: 'Are you sure?' } %> 
+      </td>
+    </tr>
+  <%end%>   
+</table>

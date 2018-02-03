@@ -1,0 +1,24 @@
+<%= link_to("logout", destroy_user_session_path, method: :delete) %>
+
+<h2>Create Project here</h2>
+<%= form_with model: Project.new do |form| %>
+  <%= render 'projects/form', form:form %>
+<% end %>
+
+<table>
+  <tr>
+    <th>Title</th>
+  </tr>
+  
+  <%- @projects.each do |pj| %>
+    <tr> 
+      <td>
+        <%=pj.project_name%>
+        <%= link_to 'Delete', 
+                     project_path(pj), 
+                                 method: :delete, 
+                                 data: { confirm: 'Are you sure?' } %> 
+      </td>
+    </tr>
+  <%end%>   
+</table>

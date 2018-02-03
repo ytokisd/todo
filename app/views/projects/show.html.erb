@@ -1,0 +1,13 @@
+<h2>Header</h2>
+<%= @project.name %>
+<p>tasks:</p>
+<%= render 'tasks/task' %>
+
+<p>Create Task </p>
+<%= form_with(model: [ @project, @project.tasks.build ]) do |form| %>
+  <%= render 'tasks/form', form:form %>
+<% end %>
+<%= link_to 'Back', projects_path %>
+
+
+

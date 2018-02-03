@@ -1,0 +1,5 @@
+<h2>Edit Project Task</h2>
+<%= form_with model: @task, url: project_task_path do |form| %>
+  <%= render 'form', form:form %>
+<% end %>
+<%= link_to 'Back', projects_path %>
