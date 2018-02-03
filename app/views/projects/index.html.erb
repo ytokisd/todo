@@ -1,0 +1,25 @@
+<h2>Projects List:</h2> 
+<table>
+<table>
+  <tr>
+    <th>Title</th>
+  </tr>
+  
+  <%- @projects.each do |pj| %>
+    <tr> 
+      <td>
+        <%=pj.name%>
+        <%= link_to 'Show', project_path(pj) %>
+        <%= link_to 'Edit', edit_project_path(pj) %>
+        <%= link_to 'Delete', project_path(pj), method: :delete, data: { confirm: 'Are you sure?' } %> 
+      </td>
+    </tr>
+  <%end%>   
+</table>
+
+<%= link_to("logout", destroy_user_session_path, method: :delete) %>
+
+<h2>Create Project here</h2>
+<%= form_with model: Project.new do |form| %>
+  <%= render 'projects/form', form:form %>
+<% end %>

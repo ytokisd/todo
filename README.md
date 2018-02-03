@@ -22,3 +22,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+index - list
+new - form for new object
+edit - form for existing object
+create - create object from form
+update - update object from edit form
+destroy - delete object
+
+
+PATCH vs PUT

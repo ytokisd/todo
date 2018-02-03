@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< Updated upstream
 ActiveRecord::Schema.define(version: 20180117170238) do
 
   create_table "projects", force: :cascade do |t|
     t.string "description"
+=======
+ActiveRecord::Schema.define(version: 20180203143450) do
+
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+>>>>>>> Stashed changes
     t.integer "user_id"
     t.integer "status_id"
     t.string "name"
@@ -24,7 +31,11 @@ ActiveRecord::Schema.define(version: 20180117170238) do
   end
 
   create_table "tasks", force: :cascade do |t|
+<<<<<<< Updated upstream
     t.string "description"
+=======
+    t.string "name"
+>>>>>>> Stashed changes
     t.integer "project_id"
     t.integer "status_id"
     t.integer "priority"

@@ -4,5 +4,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+<<<<<<< Updated upstream
   has_many :projects
+=======
+  has_many :projects, dependent: :destroy
+>>>>>>> Stashed changes
 end
