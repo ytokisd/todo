@@ -1,0 +1,3 @@
+$('<%= "#new_project_#{@project.id}" %>').remove();
+$('<%= "#edit_link_#{@project.id}" %>').show();
+$('#projects').html('<%= j render("project") %>');

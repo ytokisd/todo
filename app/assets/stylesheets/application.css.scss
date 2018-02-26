@@ -1,0 +1,62 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+h2 {
+   line-height: 25px;
+   min-height: 25px;
+   height: 25px;
+   margin: 25px;
+}
+
+table {
+	margin-bottom:50px;
+}
+
+
+.custom-margin {
+	margin-left: 20px;
+
+}
+
+.name-border {
+	border-color: #4C72B1;
+}
+
+.differentTable td{
+   border-color: black;
+}
+
+.final {
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+}
+
+.grad {
+    background: linear-gradient(#CFCDAC, #C77813);
+}
+
+.task-row {
+	background-color: white;
+}
+
+.submit {
+	color: white;
+	background-color: #70A789;
+}
+.task-input {
+	
+	 display: inline-block;
+}

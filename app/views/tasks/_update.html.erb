@@ -1,0 +1,6 @@
+<%= form_with id: "update_task_#{@task.id}", model: [@project, @task], url: project_task_path do |form| %>
+<%= form.text_field :name, label: "task name" %>
+<%= form.date_field :deadline, label: "deadline" %>
+<%= form.select :priority, ['high', 'normal', 'low']%>
+<%= form.submit %>
+<% end %>

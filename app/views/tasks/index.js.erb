@@ -1,0 +1,4 @@
+//$(#'tasks_list').html('<= j render "task" %> ');
+//$('#task_view').hide();
+$('<%= "#show_tasks_#{@project.id}" %>').hide().after(' <%= j render "task" %>');
+console.log('new, done');

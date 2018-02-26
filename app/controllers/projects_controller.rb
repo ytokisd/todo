@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
   def index
-    @projects = current_user.projects.all
+#    @projects = current_user.projects.all
   end
 
   def show
@@ -19,22 +19,31 @@ class ProjectsController < ApplicationController
 
   def create
     @project = current_user.projects.create(project_params)
-    # comment
-    # redirect_to users_path()
-    redirect_to projects_path
+    respond_to do |format|
+      format.html {redirect_to projects_path}
+      format.js
+    end    
   end
 
   def update
     @project = Project.find(params[:id])
-    if @project.update(project_params)
-      redirect_to projects_path
-    else
-      render 'edit'
+    @project.update(project_params)
+#    if @project.update(project_params)
+#      redirect_to projects_path
+#    else
+#      render 'edit'
+#    end
+    respond_to do |format|
+      format.html {redirect_to projects_path}
+      format.js
     end
   end
   def destroy
-    Project.find(params[:id]).destroy
-    redirect_to root_path
+    @project = Project.find(params[:id]).destroy
+    respond_to do |format|
+      format.html {redirect_to projects_path}
+      format.js
+    end    
   end
 
   private

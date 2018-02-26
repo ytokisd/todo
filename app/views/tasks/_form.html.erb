@@ -1,2 +1,10 @@
-<%= form.text_field :name, label: "task name" %>
-<%= form.submit %>
+<div class="input-group mb-3 task-input" style='width: 100%'>
+  <%= form_with(id: "task_form_#{@project.id}", :class => 'form-inline', remote: true, model: [ @project, @project.tasks.build]) do |form| %>
+  <div style='width: 90%'>
+  <%= form.text_field :name, placeholder: 'Start typing here to create a task...', :class => 'form-control', label: "task name" %>
+  </div>
+  <div class="input-group-append">
+    <%= form.submit :class => 'btn btn-outline-secondary submit'%>
+  </div>
+  <% end %>
+</div>
