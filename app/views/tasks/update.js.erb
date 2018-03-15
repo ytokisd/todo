@@ -2,4 +2,4 @@ $(' <%= "#update_task_#{@task.id}" %>').remove();
 $(' <%= "#task_view_#{@project.id}" %>').hide();
 $(' <%= "#create_task_#{@project.id}" %>').remove();
 $(' <%= "#task_form_#{@project.id}" %>').remove();
-$(' <%= "#show_tasks_#{@project.id}" %>').hide().after('<%= j render("task") %>');
+$('.js-project-<%= @project.id %>-tasks').html('<%= j render("tasks/task", project: @project) %>');

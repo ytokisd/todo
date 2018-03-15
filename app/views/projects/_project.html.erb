@@ -16,10 +16,8 @@
       </td>
     </tr>
     <tr class='row'>
-      <td class="col-xs-6 task-row" colspan='4'>
-        <%= link_to(project_tasks_path(pj), remote: true, id: "show_tasks_#{pj.id}") do %>
-          <p>Show Tasks</p>
-        <% end %>
+      <td class="col-xs-6 js-project-<%= pj.id %>-tasks task-row" colspan='4'>
+          <%= render 'tasks/task', project: pj %>
       </td>
     </tr>
     <%end%>  

@@ -1,18 +1,22 @@
 <%= stylesheet_link_tag "application" %>
-<div class='js-tasks-list-wrapper'> 
-  <table class='table table-hover' id=<%= "task_view_#{@project.id}" %> >
-    <%- @tasks.each do |task| %>
+<div class='js-tasks-list-wrapper'>
+  <div style='background-color: #D6D6D6'>
+    <%= render 'tasks/form', project: project %>
+  </div>
+
+  <table class='table table-hover' id=<%= "task_view_#{project.id}" %> >
+    <%- project.tasks.each do |task| %>
       <tr class="display_tasks task-row">
         <td style="width: 5%" >  <%= check_box_tag 'task_completed', task.complete, task.complete, class: 'js-toogle-task', data:{'project-id': task.project_id, 'task-id': task.id } %> </td>
         <td>  <%= task.name %> </td>
         <td>  <%= task.priority %> </td>
         <td>  <%= task.deadline %> </td>
-        <td>  <%= link_to edit_project_task_path(@project, task), id: "edit_task_#{task.id}", remote: true do %>
+        <td>  <%= link_to edit_project_task_path(project, task), id: "edit_task_#{task.id}", remote: true do %>
                 <span class="glyphicon glyphicon-cog" style='font-size: 20px'/>
                 <% end %>
         </td>
         <td>  
-          <%= link_to project_task_path(@project, task), id: "delete_task", remote: true,
+          <%= link_to project_task_path(project, task), id: "delete_task", remote: true,
                                  method: :delete, 
                                  data: { confirm: 'Are you sure?' } do %>
             <span class="glyphicon glyphicon-trash" style='font-size: 20px'/>
@@ -21,5 +25,4 @@
       </tr>
     <%end%>   
   </table>
-      <tr style='background-color: #D6D6D6'>  <%= render 'form' %> </tr>
 </div>
