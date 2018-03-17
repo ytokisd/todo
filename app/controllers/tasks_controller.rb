@@ -10,41 +10,41 @@ class TasksController < ApplicationController
 
   def new
     @project = Project.find(params[:project_id])
-	@task = Task.new	
+    @task = Task.new	
   end
 
   def create
-	@project =Project.find(params[:project_id])
+	  @project =Project.find(params[:project_id])
     @tasks = @project.tasks
-	@task = @project.tasks.create(tasks_params)
-	respond_to do |format|
+    @task = @project.tasks.create(tasks_params)
+    respond_to do |format|
       format.html {redirect_to projects_path(@project)}
       format.js
     end
   end
 
   def edit
-	@project = Project.find(params[:project_id])
-	@task = @project.tasks.find(params[:id])
+    @project = Project.find(params[:project_id])
+    @task = @project.tasks.find(params[:id])
   end
 
   def update
-	@project =Project.find(params[:project_id])
+    @project =Project.find(params[:project_id])
     @tasks = @project.tasks
-	@task = @project.tasks.find(params[:id])
-	@task.update(tasks_params)
-	respond_to do |format|
+    @task = @project.tasks.find(params[:id])
+    @task.update(tasks_params)
+    respond_to do |format|
       format.html {redirect_to projects_path(@project)}
       format.js
     end
   end
 
   def destroy
-	@project = Project.find(params[:project_id])
-	@tasks = @project.tasks
-	@task = @project.tasks.find(params[:id])
-	@task.destroy
-	respond_to do |format|
+    @project = Project.find(params[:project_id])
+    @tasks = @project.tasks
+    @task = @project.tasks.find(params[:id])
+    @task.destroy
+    respond_to do |format|
       format.html {redirect_to project_tasks_path(@project)}
       format.js
     end
