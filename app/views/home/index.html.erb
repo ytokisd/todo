@@ -8,16 +8,12 @@
 <table>
   <tr>
     <th>Title</th>
-  </tr>
-  
+  </tr>  
   <%- @projects.each do |pj| %>
     <tr> 
       <td>
         <%=pj.project_name%>
-        <%= link_to 'Delete', 
-                     project_path(pj), 
-                                 method: :delete, 
-                                 data: { confirm: 'Are you sure?' } %> 
+        <%= link_to 'Delete', project_path(pj), method: :delete, data: { confirm: 'Are you sure?' } %> 
       </td>
     </tr>
   <%end%>   

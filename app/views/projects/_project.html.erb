@@ -1,25 +1,24 @@
- <div id="project_view", class="container">
- <%- current_user.projects.each do |pj| %>
-  <table class= 'final table-bordered'>
-    <tr class='row' style='background-color: #4C72B1'>
-      <td style='border-color: #4C72B1'> <span class="glyphicon glyphicon-th-list custom-margin" style='font-size: 40px'></span> </td>
-      <td style="width: 90%; color: white; border-color: #4C72B1"> <h2> <%=pj.name%> </h2></td>
-      <td style="width: 5%; border-color: #4C72B1" >  <%= link_to(edit_project_path(pj), remote: true, id: "edit_link_#{pj.id}") do %>
+<div id="project_view", class="container">
+  <%- current_user.projects.each do |pj| %>
+    <table class= 'final table-bordered'>
+      <tr class='row' style='background-color: #4C72B1'>
+        <td style='border-color: #4C72B1'> <span class="glyphicon glyphicon-th-list custom-margin" style='font-size: 40px'> </span> </td>
+        <td style="width: 90%; color: white; border-color: #4C72B1"> <h2> <%=pj.name%> </h2></td>
+        <td style="width: 5%; border-color: #4C72B1" > <%= link_to(edit_project_path(pj), remote: true, id: "edit_link_#{pj.id}") do %>
           <span class="glyphicon glyphicon-cog" style='font-size: 40px; color: #D6D6D6'></span>
-        <% end %>
-      </td>
-      <td style="width: 5%; border-color: #4C72B1"> <%= link_to project_path(pj), remote: true, 
-                                 method: :delete, 
-                                 data: { confirm: 'Are you sure?' } do %>
-          <span class="glyphicon glyphicon-trash" style='font-size: 40px; color: #D6D6D6'></span>
+          <% end %>
+        </td>
+        <td style="width: 5%; border-color: #4C72B1">
+          <%= link_to project_path(pj), remote: true, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <span class="glyphicon glyphicon-trash" style='font-size: 40px; color: #D6D6D6'></span>
           <%end%>
-      </td>
-    </tr>
-    <tr class='row'>
-      <td class="col-xs-6 js-project-<%= pj.id %>-tasks task-row" colspan='4'>
+        </td>
+      </tr>
+      <tr class='row'>
+        <td class="col-xs-6 js-project-<%= pj.id %>-tasks task-row" colspan='4'>
           <%= render 'tasks/task', project: pj %>
-      </td>
-    </tr>
-    <%end%>  
-  </table>
+        </td>
+      </tr>
+  <%end%>  
+    </table>
 </div>

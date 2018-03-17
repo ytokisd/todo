@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
   def index
-#    @projects = current_user.projects.all
+
   end
 
   def show
@@ -28,16 +28,12 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     @project.update(project_params)
-#    if @project.update(project_params)
-#      redirect_to projects_path
-#    else
-#      render 'edit'
-#    end
     respond_to do |format|
       format.html {redirect_to projects_path}
       format.js
     end
   end
+
   def destroy
     @project = Project.find(params[:id]).destroy
     respond_to do |format|
@@ -50,4 +46,4 @@ class ProjectsController < ApplicationController
     def project_params
       params.require(:project).permit(:name)
     end
-  end
+end

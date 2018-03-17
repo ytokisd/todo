@@ -1,11 +1,9 @@
 <h2><center>SIMPLE TODO LISTS:</center></h2> 
 <div id="projects">
-<%= render 'project' %>
-
+  <%= render 'project' %>
 </div>
 <%= link_to("logout", destroy_user_session_path, method: :delete) %>
-
 <center><%= link_to new_project_path, id: "new_link", remote: true do %>
-	<button> New Project</button>
-	<% end %>
+  <button> New Project</button>
+  <% end %>
 </center>

@@ -6,7 +6,7 @@ context "create project" do
 	project = create :project
 	expect(project.name).to eq "first_project"
 	expect(project.description).to eq "testproj"
-	end
+	  end
   end
 context "Assotiations"do
   it {is_expected.to belong_to(:user) }
